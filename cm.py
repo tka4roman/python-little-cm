@@ -19,7 +19,8 @@ def execute_ssh(username, command, host):
 	
 	print("[+] Executing ssh commands on the host {}:".format(host))
 	subprocess.Popen(["ssh", username + "@" + host, command ], 
-					shell=False)
+					shell=False, 
+					stdout=subprocess.PIPE)
 
 def get_hosts(path):
 	
@@ -39,4 +40,8 @@ username = options.username
 command = options.command
 
 for host in hosts:
-	execute_ssh(username, command, host)
+	if host != "":
+		try:
+			execute_ssh(username, command, host)
+		except:
+			print("[-] Unable to connect...")
