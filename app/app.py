@@ -13,7 +13,7 @@ class MyServer(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(bytes("<html><head><title>Simple-dimple</title></head>", "utf-8"))
         self.wfile.write(bytes("<p>Was deployed on: %s</p>" % date, "utf-8"))
-        self.wfile.write(bytes("<p>Let's cheer up!</p>"))
+        self.wfile.write(bytes("<p>Let's go!</p>", "utf-8"))
         self.wfile.write(bytes("<body>", "utf-8"))
         self.wfile.write(bytes("</body></html>", "utf-8"))
 
