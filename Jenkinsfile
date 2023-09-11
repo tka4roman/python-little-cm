@@ -1,4 +1,5 @@
 node {
+    agent "node-test"
     def app
 
     stage('Clone repository') {
