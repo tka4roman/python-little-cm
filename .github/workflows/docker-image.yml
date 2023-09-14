@@ -5,6 +5,8 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+env:
+  REGISTRY: registry.hub.docker.com/qriztch
 
 jobs:
 
@@ -28,4 +30,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: simple-dimple-github:latest
+        tags: ${{ env.REGISTRY }}/simple-dimple-github:latest
